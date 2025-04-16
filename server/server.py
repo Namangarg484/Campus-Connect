@@ -35,6 +35,8 @@ def placement_pred():
 
     prediction = rf.predict([input_list])
 
+#given condition
+
     if prediction == 1:
         return jsonify({'Prediction': 'Placed'})
     else:
