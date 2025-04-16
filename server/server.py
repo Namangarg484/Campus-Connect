@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 rf = pickle.load(open('model/rf.pkl', 'rb'))
 
+#made the modelInput to describe inputs
 class ModelInput(BaseModel):
     Age: int
     CGPA: int
@@ -14,7 +15,8 @@ class ModelInput(BaseModel):
     Internships: int
     HistoryOfBacklogs: int
     Gender: int
-
+    
+# route for placement prediction
 @app.route('/placement_prediction', methods=['POST'])
 def placement_pred():
     try:
